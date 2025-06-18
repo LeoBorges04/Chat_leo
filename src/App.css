@@ -1,0 +1,92 @@
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  width: 100vw;
+  background-color: #FBE9E7;
+  overflow: hidden;
+  
+}
+
+.container{
+box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;  display: flex;
+  flex-direction: row;
+  width:1600px;
+  height: 900px;
+  overflow: hidden;
+
+}
+
+.sidebar{
+  margin-left: 0;
+  height:1000;
+  width: 415px;
+  background-color: #F48FB1;
+border:1px solid #FFCDD2;
+}
+.chat{
+  
+  display: flex;
+  flex-direction: column;
+  
+  height: 900px;
+  width:1186px;
+  border:1px solid #FFCDD2;
+  
+  
+}
+.mensagens {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset;
+  background-color: white;
+  flex: 1; /* Ocupa todo o espaço disponível entre header e footer */
+  overflow-y: auto; /* Permite rolar caso tenha muitas mensagens */
+}
+.header{
+  
+  border:1px solid#FFCDD2;
+  height: 64px;
+  width: 100%;
+  background-color: #F8BBD0;
+  align-self: flex-end;
+  
+ 
+}
+.footer{
+  
+  display: flex;
+  justify-content: center;
+  height: 64px;
+  width: 100%;
+  background-color:#F8BBD0;
+  align-self: flex-end;
+  align-items: center;
+ 
+ border:1px solid #FFCDD2;
+}
+
+.inputMensagem{
+  border:none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 4px 0px inset;
+  width: 900px;
+  height: 40px;
+  border-radius: 10px;
+  background-color:#FBE9E7;
+  font-size: large;
+  color: rgb(67, 61, 61); 
+  
+}
+
+.inputMensagem::placeholder{
+  font-size: large;
+  color: rgb(67, 61, 61);
+  opacity: 1;
+  text-decoration: none;
+}
+
+.inputMensagem:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #F48FB1; /* rosa suave no foco */
+}
