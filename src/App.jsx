@@ -1,6 +1,30 @@
 import "./App.css";
-function App() {
-  
+import { useEffect, useState } from "react";
+
+import ChatInput from "./Input";
+import { socket } from "./socket";
+
+
+
+function App(){
+     const [socketInstance] = useState(socket());
+
+     useEffect(() => {
+      socketInstance.on("message", (mensagem) =>{
+          console.log("Mensagem recebida", mensagem);
+      });
+        return () =>{
+          socketInstance.off("message");
+        }
+     }, []);
+
+     const handleSendMessage = (data) => {
+
+
+      socketInstance.emit("message", data)
+
+     }
+
   return (
     <>
       <div>
@@ -15,11 +39,8 @@ function App() {
             <div className="mensagens"></div>
 
             <div className="footer">
-              <input
-                type="text"
-                placeholder="Digite uma mensagem"
-                className="inputMensagem"
-              />
+              <ChatInput onSend={handleSendMessage} />
+
             </div>
           </div>
         </div>
